@@ -78,10 +78,72 @@ faqItems.forEach(item => {
     });
 });
 
+// Sector Tabs Functionality
+function initSectorTabs() {
+    const sectorTabs = document.querySelectorAll('.sector-tab');
+    const sectorContents = document.querySelectorAll('.sector-content');
+
+    if (sectorTabs.length > 0) {
+        sectorTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                sectorTabs.forEach(t => t.classList.remove('active'));
+                sectorContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding content
+                const sectorId = tab.getAttribute('data-sector');
+                const targetContent = document.getElementById(`${sectorId}-content`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    }
+}
+
+// Email validation for corporate emails
+function initEmailValidation() {
+    const downloadForm = document.getElementById('whitepaper-download');
+    const contactForm = document.querySelector('.contact-form');
+
+    if (downloadForm) {
+        downloadForm.addEventListener('submit', function(e) {
+            const email = document.getElementById('wp-email').value;
+            if (isPersonalEmail(email)) {
+                e.preventDefault();
+                alert('Por favor, utiliza tu email corporativo para descargar el whitepaper.');
+            }
+        });
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            if (isPersonalEmail(email)) {
+                e.preventDefault();
+                alert('Por favor, utiliza tu email corporativo para reservar tu auditoría.');
+            }
+        });
+    }
+}
+
+function isPersonalEmail(email) {
+    const personalDomains = ['gmail.com', 'hotmail.com', 'yahoo.com', 'outlook.com', 'aol.com', 'icloud.com', 'protonmail.com', 'mail.com'];
+    if (!email.includes('@')) return true;
+    
+    const domain = email.split('@')[1].toLowerCase();
+    return personalDomains.some(personalDomain => domain.includes(personalDomain));
+}
+
 // Init functions on page load
 window.addEventListener('load', function () {
     createParticles();
     animateOnScroll();
+    initSectorTabs();
+    initEmailValidation();
 
     // Run animation on scroll
     window.addEventListener('scroll', animateOnScroll);
