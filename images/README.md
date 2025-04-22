@@ -6,23 +6,17 @@ Para completar la implementación de la landing page, necesitarás crear las sig
 
 1. **dashboard-mockup.png** - Un mock-up de un dashboard de IA con métricas de resultados para la sección hero
    - Resolución recomendada: 1200x800px
-   - Debe mostrar gráficos con métricas de mejora (ROI, reducción de costes, etc.)
+   - Debe mostrar gráficos con métricas hipotéticas (ROI, reducción de costes, etc.)
+   - Asegúrate que se presente como una simulación o ejemplo ilustrativo
 
-2. **client-logo-1.png**, **client-logo-2.png**, **client-logo-3.png**, **client-logo-4.png** - Logos de empresas cliente para la sección de prueba social
+2. **client-logo-1.png**, **client-logo-2.png**, **client-logo-3.png**, **client-logo-4.png** - Logos para la sección de prueba social
    - Resolución recomendada: 180x80px
    - Formato transparente (PNG)
-   - Utilizar logos de empresas reconocidas de tu sector
-
-## Sobre Calendly:
-
-Para que la integración de Calendly funcione correctamente, deberás:
-
-1. Crear una cuenta en Calendly (https://calendly.com/)
-2. Configurar un tipo de evento "Auditoría gratuita de 30 min"
-3. Actualizar el enlace en el código HTML con tu enlace personal de Calendly:
-   ```html
-   <div class="calendly-inline-widget" data-url="https://calendly.com/TU-USUARIO/auditoria-30min" style="min-width:320px;height:500px;"></div>
-   ```
+   - **Importante**: En lugar de logos de clientes actuales (que aún no tienes), considera:
+     - Usar logos de asociaciones del sector
+     - Crear iconos de industrias (Banca, Retail, etc.)
+     - Usar logos de tecnologías o plataformas con las que trabajas
+     - Añadir un texto que indique "Tecnologías y herramientas" en lugar de "Clientes"
 
 ## Google Analytics y Hotjar:
 
